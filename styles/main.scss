@@ -1,0 +1,122 @@
+@import "navbar";
+@import "confic";
+@import "media";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+.hero {
+    background-color: $primary-color;
+
+    &-cont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        height: 90%;
+        width: 100%;
+        max-width: 1200px;
+        z-index: 1;
+        padding-right: 24px;
+        padding-left: 24px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        &-left {
+            width: 100%;
+            line-height: 1.2;
+
+            @include tablet {
+                padding: 5rem 0;
+            }
+
+            @include mobile {
+                line-height: 1.5rem;
+            }
+        }
+
+        &-left h1 {
+            font-size: 4rem;
+            color: $lime;
+
+            @include tablet {
+                font-size: 1.5rem;
+            }
+        }
+
+        &-left h2 {
+            font-size: 4rem;
+            color: $secondary-color;
+
+            @include mobile {
+                font-size: 2rem;
+            }
+        }
+
+        &-left p {
+            font-size: 2rem;
+            color: $secondary-color;
+            margin-top: 1rem;
+            font-weight: 700;
+
+            @include mobile {
+                font-size: 2rem;
+            }
+        }
+
+        &-btn {
+            font-size: 1rem;
+            background-color: $lime;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            color: $primary-color;
+            margin-top: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: all .3s ease-in;
+            outline: none;
+        }
+
+        &-btn a {
+            position: relative;
+            z-index: 2;
+            color: $primary-color;
+            text-decoration: none;
+        }
+
+        &-btn::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $orangeRed;
+            transition: all .3s ease-in;
+            border-radius: 4px;
+        }
+
+        &-btn:hover::after {
+            width: 100%;
+        }
+
+        &-right {
+            text-align: center;
+        }
+
+        &-img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
